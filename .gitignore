@@ -1,0 +1,14 @@
+# macOS / local tooling
+.DS_Store
+.claude/
+
+# Source files and design references not used by the site — kept out of the
+# public repo. Live pages reference only the assets that remain tracked.
+/assets/references/
+/assets/typewrier.png
+/assets/Writings.png
+/assets/writingsSecion.svg
+/assets/CGG-Logo.svg
+/assets/Screenshot 2026-08-09 at 18.35.31 4.svg
+/assets/Let's create something meaningful together.svg
+/assets/Over the past 10 years, I've helped some of the world's largest enterprises, designing AI-driven solutions and business strategies..svg

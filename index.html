@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caio Grabalos Galvão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ─── WRITINGS STICKER (page-level, fixed corner) ─────────────── -->
+  <a href="writings.html" class="site-header__sticker" aria-label="Writings">
+    <img src="assets/writings-sticker.png" alt="" width="260" height="230" />
+  </a>
+
+  <!-- ─── STICKY HEADER ─────────────────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo" aria-label="Home">
+          <img src="assets/CGG-Logo-new.svg" alt="CGG" width="90" height="20" />
+        </a>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          <a href="#work" class="site-header__nav-link">WORK</a>
+          <a href="#cv" class="site-header__nav-link">CV</a>
+          <a href="#contact" class="site-header__nav-link">CONTACT</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO META ───────────────────────────────────────────────── -->
+  <section class="hero-meta" aria-label="Current role and timezones">
+    <div class="container">
+      <div class="hero-meta__inner">
+        <div class="hero-meta__current-role">
+          <span>CURRENTLY AT <strong>SAP</strong> AS</span>
+          <span>AI STRATEGIST</span>
+        </div>
+        <div class="hero-meta__clocks">
+          <div class="hero-timezone">
+            <div class="hero-timezone__time-row">
+              <span class="hero-timezone__time" id="hero-clock-ny">-- -- --</span>
+              <span id="hero-abbrev-ny">EDT</span>
+            </div>
+            <span id="hero-tz-ny">UTC/GMT -4 HOURS</span>
+            <div class="hero-timezone__location">
+              <span>NEW YORK</span>
+              <span>US</span>
+            </div>
+          </div>
+          <div class="hero-timezone">
+            <div class="hero-timezone__time-row">
+              <span class="hero-timezone__time" id="hero-clock-sp">-- -- --</span>
+              <span id="hero-abbrev-sp">GMT-3</span>
+            </div>
+            <span id="hero-tz-sp">UTC/GMT -3 HOURS</span>
+            <div class="hero-timezone__location">
+              <span>SÃO PAULO</span>
+              <span>BR</span>
+            </div>
+          </div>
+          <div class="hero-timezone">
+            <div class="hero-timezone__time-row">
+              <span class="hero-timezone__time" id="hero-clock-bcn">-- -- --</span>
+              <span id="hero-abbrev-bcn">CEST</span>
+            </div>
+            <span id="hero-tz-bcn">UTC/GMT +2 HOURS</span>
+            <div class="hero-timezone__location">
+              <span>BARCELONA</span>
+              <span>SPAIN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── MAIN STATEMENT ────────────────────────────────────────────── -->
+  <section class="main-statement" aria-label="Main statement">
+    <div class="container">
+      <img
+        src="assets/MainStatement.svg"
+        alt="Caio Grabalos Galvão is a designer working at the intersection of experience, strategy &amp; technology, helping people navigate complexity through innovation."
+        class="main-statement__svg"
+        width="1360"
+        height="200"
+      />
+    </div>
+  </section>
+
+  <!-- ─── INTERACTIVE CONTAINER ─────────────────────────────────────── -->
+  <section class="interactive-section" aria-label="Interactive cell system">
+    <div class="container">
+      <div class="interactive-container">
+        <canvas id="cells-canvas" aria-hidden="true"></canvas>
+      </div>
+      <p id="cells-caption" aria-live="polite">
+        "Simple rules can generate complex behavior."
+      </p>
+    </div>
+
+    <div id="cells-cursor" aria-hidden="true">
+      <div class="cells-cursor__badge">
+        <span class="cells-cursor__icon">+</span>
+        <span class="cells-cursor__label">CLICK TO INTERACT</span>
+      </div>
+      <p class="cells-cursor__quote">
+        "At the edge of chaos, life has enough stability to sustain itself and enough creativity to deserve the name of life."<br />
+        — Stuart Kauffman
+      </p>
+    </div>
+  </section>
+
+  <!-- ─── SELECTED WORK ─────────────────────────────────────────────── -->
+  <section class="selected-work" id="work" aria-label="Selected work">
+    <div class="container">
+      <h2 class="section-label">SELECTED WORK</h2>
+      <div class="work-grid">
+
+        <a href="https://www.behance.net/gallery/102757269/UX-Research-and-Design-for-Machine-Maintenance" class="work-card-link" target="_blank" rel="noopener noreferrer" aria-label="View ABF case study on Behance">
+          <article class="work-card">
+            <div class="work-card__header">
+              <h3 class="work-card__title">ABF</h3>
+              <span class="work-card__category">Agribusiness<br/>Machine Maintenance</span>
+            </div>
+            <div class="work-card__image-wrap">
+              <img src="assets/case-study-abf.png" alt="ABF predictive maintenance app showing sensor vibration data and equipment health alerts" class="work-card__image" />
+            </div>
+            <div class="work-card__tags">
+              <span class="tag">UX Research</span>
+              <span class="tag">Product Design</span>
+              <span class="tag">AI Strategy</span>
+            </div>
+            <span class="work-card__disclaimer">Full case study on Behance ↗</span>
+          </article>
+        </a>
+
+        <a href="case-study-evergreen.html" class="work-card-link" aria-label="View Evergreen case study">
+          <article class="work-card">
+            <div class="work-card__header">
+              <h3 class="work-card__title">Evergreen</h3>
+              <span class="work-card__category">Financial Services<br/>Life Insurance</span>
+            </div>
+            <div class="work-card__image-wrap">
+              <img src="assets/case-study-evergreen.png" alt="Evergreen life insurance app showing plan progression and property down payment goal" class="work-card__image" />
+            </div>
+            <div class="work-card__tags">
+              <span class="tag">Service Design</span>
+              <span class="tag">Product Design</span>
+              <span class="tag">Branding</span>
+            </div>
+          </article>
+        </a>
+
+        <a href="https://www.behance.net/gallery/102824433/xMining-UX-Research-and-Design-for-Mining-Industry" class="work-card-link" target="_blank" rel="noopener noreferrer" aria-label="View XMining case study on Behance">
+          <article class="work-card">
+            <div class="work-card__header">
+              <h3 class="work-card__title">XMining</h3>
+              <span class="work-card__category">Mining<br/>Maintenance Operations</span>
+            </div>
+            <div class="work-card__image-wrap">
+              <img src="assets/case-study-xmining.png" alt="XMining maintenance orders dashboard showing AI-scored solution approaches" class="work-card__image" />
+            </div>
+            <div class="work-card__tags">
+              <span class="tag">UX Research</span>
+              <span class="tag">Product Design</span>
+              <span class="tag">AI Strategy</span>
+            </div>
+            <span class="work-card__disclaimer">Full case study on Behance ↗</span>
+          </article>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CV CTA ────────────────────────────────────────────────────── -->
+  <section class="cv-cta" id="cv" aria-label="Career statement">
+    <div class="container">
+      <img
+        src="assets/OverThePast10Years.svg"
+        alt="Over the past 10 years, I've helped some of the world's largest enterprises, designing AI-driven solutions and business strategies."
+        class="cv-cta__svg"
+        width="1360"
+        height="200"
+      />
+    </div>
+  </section>
+
+  <!-- ─── CV DETAIL ─────────────────────────────────────────────────── -->
+  <section class="cv-detail" aria-label="Curriculum details">
+    <div class="container">
+      <div class="cv-detail__grid">
+
+        <div class="cv-detail__col">
+          <div class="cv-row">
+            <h3 class="cv-row__label">Profile</h3>
+            <div class="cv-row__content">
+              <p>I am a designer working at the intersection of experience, strategy, and technology. Over the past 10 years, I've helped some of the world's largest enterprises navigate complexity through innovation — designing AI-driven solutions and business strategies built on SAP technologies and artificial intelligence.</p>
+              <p>I specialize in Service Design, User Experience (UX) Design, and innovation methodologies, combining a strong visual design background with strategic thinking to deliver aesthetically compelling, business-relevant outcomes. I also have deep experience building compelling business cases and supporting technical and business architecture for enterprise AI initiatives.</p>
+            </div>
+          </div>
+
+          <div class="cv-row">
+            <h3 class="cv-row__label">Education</h3>
+            <div class="cv-row__content">
+              <p><u>Anhembi Morumbi</u>, Graphic Design Bachelor's Degree</p>
+              <p><u>IU Internationale Hochschule</u>, B.A. Entrepreneurship</p>
+            </div>
+          </div>
+
+          <div class="cv-row">
+            <h3 class="cv-row__label">Languages</h3>
+            <div class="cv-row__content">
+              <p><u>English</u> Fluent Level; <u>Portuguese</u> Native Speaker; <u>Spanish</u> Professional Level;</p>
+            </div>
+          </div>
+
+          <div class="cv-row">
+            <h3 class="cv-row__label">Skills</h3>
+            <div class="cv-row__content">
+              <p><u>Service Design</u>, <u>Innovation Strategy</u>, <u>Design Thinking</u>, <u>AI Strategy &amp; Value Realization</u>, <u>User Experience (UX)</u>, <u>Business Development</u>, <u>Project Management</u></p>
+            </div>
+          </div>
+
+          <div class="cv-row">
+            <h3 class="cv-row__label">Speaking and Mentorship</h3>
+            <div class="cv-row__content">
+              <p><u>SAP LAC Innovation Tournament</u>, 2024, 2025 — Mentored participating teams across the Americas on AI strategy and solution design, in SAP's regional "Reverse Shark Tank"-style innovation competition</p>
+              <p><u>Mastering the AI Discovery Workshop: Tips &amp; Best Practices</u>, 2026 — Created and led a self-paced learning program for SAP professionals across the Americas on structuring AI Discovery Workshops, translating SAP Business AI capabilities into value-driven adoption roadmaps</p>
+              <p><u>Brazilian-German Chamber of Commerce and Industry — Innovation &amp; International Cooperation Event</u> — Represented SAP.iO in a German Accelerator initiative, holding 1:1 sessions with international startups to discuss business opportunities and their application in the Latin American market</p>
+            </div>
+          </div>
+
+          <div class="cv-row">
+            <h3 class="cv-row__label">Awards and Recognition</h3>
+            <div class="cv-row__content">
+              <p><u>ADG Brasil — 12th Brazilian Graphic Design Biennial</u>, 2017 — "U+2194: A Typographic Experience" — Led an experimental, interactive digital typeface exploring type and technology</p>
+              <p><u>SAP Labs Innoweeks</u>, 2020 — 1st Place, Best Design — with Wickbold</p>
+              <p><u>SAP Innoweeks</u>, 2017 — 2nd Best Innovation Use Case — with O Boticário</p>
+              <p><u>SAP Spotlight &amp; Honor Recognitions</u>, 2017–2018 — Internal recognition for outstanding contribution</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cv-detail__col">
+          <div class="cv-row">
+            <h3 class="cv-row__label">Featured Projects</h3>
+            <div class="cv-row__content cv-row__content--list">
+
+              <div class="cv-project">
+                <p><u>Itaú BBA</u> — Redesigned treasury reconciliation for new fintech rails (PIX, Open Banking) — <em>Up to 50% less reconciliation time, lower cost, higher digital adoption</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">Service Design</span>
+                  <span class="tag">Product Design</span>
+                  <span class="tag">AI Strategy</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>Bradesco</u> — Designed an "invisible banking" experience integrating ERP and bank data for SMEs — <em>Improved digital engagement and transaction volume</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">Service Design</span>
+                  <span class="tag">Product Design</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>Grupo Pão de Açúcar</u> — Designed Brazil's first walletless checkout for express stores — <em>75% shorter checkout time, 60% lower POS cost</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">Product Design</span>
+                  <span class="tag">Service Design</span>
+                  <span class="tag">AI Strategy</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>Wickbold</u> — Designed a tracking system for reusable distribution crates, SAP Innoweeks 2020 — <em>1st Place, Best Design (SAP Labs Innoweeks, LatAm)</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">Product Design</span>
+                  <span class="tag">Service Design</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>Embraer</u> — Defined an AI strategy spanning governance, agent design, and integration — <em>Delivered to C-level innovation committee, supporting AI adoption</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">AI Strategy</span>
+                  <span class="tag">Governance</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>Boomera</u> — Designed a marketplace connecting waste generators with recyclers and cooperatives — <em>Public partnership (SAP NOW 2020); served brands like Adidas, Unilever, GPA</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">Product Design</span>
+                  <span class="tag">Service Design</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>Evergreen</u> — Reframed life insurance as a living, revisable legacy plan, redesigning product, positioning, and operating model — <em>Projected: addresses a retention gap worth up to 10x revenue on managed clients</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">Service Design</span>
+                  <span class="tag">Product Design</span>
+                  <span class="tag">Branding</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>ABF</u> — Led plant immersion and UX research, then designed a predictive maintenance app translating scattered sensor data into real-time equipment health and failure alerts — <em>Published case study; shifted maintenance from corrective to predictive</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">UX Research</span>
+                  <span class="tag">Product Design</span>
+                  <span class="tag">AI Strategy</span>
+                </div>
+              </div>
+
+              <div class="cv-project">
+                <p><u>XMining</u> — Designed an AI-assisted system that analyzes, prioritizes, and recommends solutions for maintenance requisitions — <em>Published case study; reduced backlog risk and mitigated emergency purchases</em></p>
+                <div class="cv-project__tags">
+                  <span class="tag">UX Research</span>
+                  <span class="tag">Product Design</span>
+                  <span class="tag">AI Strategy</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-row cv-row--full">
+        <h3 class="cv-row__label">Other Projects</h3>
+        <div class="cv-row__content">
+          <table class="cv-table">
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Sector</th>
+                <th>What I Did</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Usina São Martinho</td>
+                <td>Agribusiness</td>
+                <td>Real-time ops center for harvest &amp; logistics decisions</td>
+              </tr>
+              <tr>
+                <td>Natura</td>
+                <td>Consumer Goods</td>
+                <td>Real-time matching model for consultant-to-client delivery</td>
+              </tr>
+              <tr>
+                <td>Neoenergia (Celpe)</td>
+                <td>Utilities</td>
+                <td>Automated document verification for ownership-change requests</td>
+              </tr>
+              <tr>
+                <td>CBA</td>
+                <td>Mining</td>
+                <td>Digital daily-routine tool with customer-facing KPIs</td>
+              </tr>
+              <tr>
+                <td>Petrobras</td>
+                <td>Facilities Maintenance</td>
+                <td>Chatbot-driven maintenance intake with automatic ticket triage</td>
+              </tr>
+              <tr>
+                <td>BASF</td>
+                <td>Chemicals</td>
+                <td>Data-driven lead scoring for sales coverage</td>
+              </tr>
+              <tr>
+                <td>BR Distribuidora / Petrobras</td>
+                <td>Retail</td>
+                <td>Loyalty-linked personalization for gas station experience</td>
+              </tr>
+              <tr>
+                <td>BRF</td>
+                <td>Food</td>
+                <td>Optimization model for daily truck allocation</td>
+              </tr>
+              <tr>
+                <td>Porto Seguro</td>
+                <td>Insurance</td>
+                <td>Low-cost digital compliance model for SME segment</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+
+      <div class="site-footer__cta">
+        <img
+          src="assets/LetsCreateSomething.svg"
+          alt="Let's create something meaningful together."
+          class="site-footer__cta-svg"
+          width="1360"
+          height="200"
+        />
+      </div>
+
+      <div class="site-footer__bottom">
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="#work">WORK</a>
+          <a href="#cv">CV</a>
+          <a href="writings.html">WRITINGS</a>
+          <a href="#contact">CONTACT</a>
+        </nav>
+        <div class="site-footer__right">
+          <div class="site-footer__social">
+            <a href="https://www.behance.net/caiogg" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+            <a href="https://www.linkedin.com/in/caiogg" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+          <a href="mailto:caio.grabalos@sap.com" class="site-footer__email">caio.grabalos@sap.com</a>
+        </div>
+      </div>
+
+      <p class="site-footer__copy">© 2026 Caio Grabalos Galvão</p>
+
+    </div>
+  </footer>
+
+  <script src="interactive-cells.js"></script>
+  <script src="clocks.js"></script>
+</body>
+</html>

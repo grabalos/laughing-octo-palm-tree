@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Evergreen — Case Study | Caio Grabalos Galvão</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .cs-wrap {
+      max-width: calc(var(--max-width) + var(--margin) * 2);
+      margin-inline: auto;
+      padding-inline: var(--margin);
+      padding-block: 20px 80px;
+    }
+    .cs-img {
+      display: block;
+      width: 100%;
+      max-width: 1160px;
+      height: auto;
+      margin-inline: auto;
+      margin-block: 28px;
+    }
+    .cs-img--narrow {
+      max-width: 680px;
+      margin-inline: auto;
+    }
+    .cs-img--pad-top {
+      margin-top: 56px;
+    }
+    .cs-img--pad-bottom {
+      margin-bottom: 56px;
+    }
+
+    /* Page-specific header nav: section jump-links instead of the global nav */
+    .site-header__nav--sections {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    /* Hero header (coded, not an image) */
+    .cs-hero-header {
+      padding-block: 360px 140px;
+      border-bottom: 1px solid var(--color-black);
+    }
+
+    .cs-hero-header__grid {
+      display: grid;
+      grid-template-columns: 300px minmax(360px, 620px) 1fr;
+      column-gap: 48px;
+      align-items: start;
+    }
+
+    .cs-hero-header__label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      margin-bottom: 18px;
+    }
+
+    .cs-hero-header__title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-size: clamp(48px, 5vw, 76px);
+      line-height: 1;
+      margin: 0 0 22px;
+    }
+
+    .cs-hero-header__category {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+      color: #666;
+      margin: 0;
+    }
+
+    .cs-hero-header__desc-col {
+      font-family: var(--font-mono);
+      font-size: 14px;
+      line-height: 1.7;
+      padding-top: 6px;
+    }
+
+    .cs-hero-header__desc-col p {
+      margin: 0 0 20px;
+    }
+
+    .cs-hero-header__desc-col p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cs-hero-header__cta-col {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media (max-width: 900px) {
+      .cs-hero-header__grid {
+        grid-template-columns: 1fr;
+        row-gap: 32px;
+      }
+      .cs-hero-header__cta-col {
+        justify-content: flex-start;
+      }
+      .site-header__nav--sections {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ─── WRITINGS STICKER (page-level, fixed corner) ─────────────── -->
+  <a href="writings.html" class="site-header__sticker" aria-label="Writings">
+    <img src="assets/writings-sticker.png" alt="" width="260" height="230" />
+  </a>
+
+  <!-- ─── BACK TO HOME (fixed) ───────────────────────────────────────── -->
+  <a href="index.html" class="back-to-home" aria-label="Back to home">← Go back</a>
+
+  <!-- ─── STICKY HEADER (logo + in-page section nav) ─────────────────── -->
+  <header class="site-header" id="site-header">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="index.html" class="site-header__logo" aria-label="Home">
+          <img src="assets/CGG-Logo-new.svg" alt="CGG" width="90" height="20" />
+        </a>
+        <nav class="site-header__nav site-header__nav--sections" aria-label="Case study sections">
+          <a href="#the-problem" class="site-header__nav-link">THE PROBLEM</a>
+          <a href="#research" class="site-header__nav-link">RESEARCH</a>
+          <a href="#insights" class="site-header__nav-link">INSIGHTS</a>
+          <a href="#positioning" class="site-header__nav-link">POSITIONING</a>
+          <a href="#solution" class="site-header__nav-link">THE SOLUTION</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ─── HERO HEADER (coded, matches site typography) ───────────────── -->
+  <section class="cs-hero-header">
+    <div class="container">
+      <div class="cs-hero-header__grid">
+        <div>
+          <span class="cs-hero-header__label">Case Study</span>
+          <h1 class="cs-hero-header__title">Evergreen</h1>
+          <p class="cs-hero-header__category">Financial Services<br />Life Insurance</p>
+        </div>
+        <div class="cs-hero-header__desc-col">
+          <p>Evergreen reframes life insurance as a living, revisable legacy plan that keeps working for the people you love, instead of a one-time payout triggered by loss.</p>
+          <p>This case study started by investigating why claim payments take so long and where communication with beneficiaries breaks down. Delay turned out to be a symptom of a wider system that needed more than faster paperwork: a new product, positioning, and operating model balancing policyholders, beneficiaries, and the business behind them.</p>
+        </div>
+        <div class="cs-hero-header__cta-col">
+          <a href="https://www.behance.net/caiogg" target="_blank" rel="noopener noreferrer" class="btn-cv">READ ON BEHANCE →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════════
+       EVERGREEN CASE STUDY — built from the real exported Figma sections
+       ═══════════════════════════════════════════════════════════════════ -->
+  <main class="cs-wrap">
+
+    <img id="the-problem" src="assets/evergreen-case-study/02-intro-problem.png" alt="Evergreen reframes life insurance as a living, revisable legacy plan. The Problem: for DLI, the insurer behind Evergreen, the current product fails on two fronts." class="cs-img" />
+
+    <img src="assets/evergreen-case-study/01-hero.png" alt="Your legacy, planned. Evergreen — family flying a kite in a field" class="cs-img" />
+
+    <img id="research" src="assets/evergreen-case-study/03-human-business-cost.png" alt="The human cost and the business cost of an unmanaged inheritance moment, with supporting statistics" class="cs-img cs-img--pad-top" />
+
+    <img src="assets/evergreen-case-study/04-journey-ruler-intro.png" alt="User Journey Ruler — the as-is user experience was consolidated in a Journey Ruler based on different service design methods, with footnotes on Frontstage/Backstage Alignment, Carlzon's Moments of Truth, and Composite Personas" class="cs-img cs-img--pad-top" />
+
+    <img src="assets/evergreen-case-study/05-persona-journey.png" alt="The Policyholder Planning Ahead and The Beneficiary Who Didn't Ask For This personas, with an orchestrated/consistent/reactive journey ruler chart" class="cs-img" />
+
+    <img src="assets/evergreen-case-study/07-financial-perspective.png" alt="The financial perspective — a chart showing R$3,000,000 payout value versus R$0 if no claim occurs, and why the product underperforms as a long-term relationship" class="cs-img cs-img--pad-top" />
+
+    <img id="insights" src="assets/evergreen-case-study/08-insights.png" alt="Insights — research insights translated into jobs to be done, with a journey map and four persona quote cards" class="cs-img cs-img--pad-top" />
+
+    <img id="positioning" src="assets/evergreen-case-study/09-positioning-shift.png" alt="Positioning Shift: From compensation to continuity — a table comparing old insurance language to Evergreen language" class="cs-img cs-img--pad-top" />
+
+    <img src="assets/evergreen-case-study/10-chassis.png" alt="The Chassis — why VGBL/PGBL, not risk-only insurance, with a comparison of premium escalation versus VGBL accumulation" class="cs-img" />
+
+    <img id="solution" src="assets/evergreen-case-study/11-product-features.png" alt="Product Feature: a plan built to be lived in, not just paid into — evergreen by goals and evergreen bridge, with mobile app screens" class="cs-img cs-img--pad-top" />
+
+    <img src="assets/evergreen-case-study/12-what-stayed-open.png" alt="Systems Design and Ethics — what stayed open: dead-hand control versus beneficiary autonomy, where AI could help and where it legally can't, and the incentive model behind the design" class="cs-img cs-img--pad-top cs-img--pad-bottom" />
+
+  </main>
+
+  <!-- ─── FOOTER (identical to homepage) ─────────────────────────────── -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+
+      <div class="site-footer__cta">
+        <img
+          src="assets/LetsCreateSomething.svg"
+          alt="Let's create something meaningful together."
+          class="site-footer__cta-svg"
+          width="1360"
+          height="200"
+        />
+      </div>
+
+      <div class="site-footer__bottom">
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="index.html#work">WORK</a>
+          <a href="index.html#cv">CV</a>
+          <a href="writings.html">WRITINGS</a>
+          <a href="index.html#contact">CONTACT</a>
+        </nav>
+        <div class="site-footer__right">
+          <div class="site-footer__social">
+            <a href="https://www.behance.net/caiogg" target="_blank" rel="noopener noreferrer">Behance ↗</a>
+            <a href="https://www.linkedin.com/in/caiogg" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          </div>
+          <a href="mailto:caio.grabalos@sap.com" class="site-footer__email">caio.grabalos@sap.com</a>
+        </div>
+      </div>
+
+      <p class="site-footer__copy">© 2026 Caio Grabalos Galvão</p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
