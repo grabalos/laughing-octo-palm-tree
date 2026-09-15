@@ -364,24 +364,23 @@
     return { x: touch.clientX - rect.left, y: touch.clientY - rect.top };
   }
 
+  // A tap fires `click` too, so this one handler covers mouse and touch
+  // (a separate touchstart handler used to spawn two cells per tap).
   canvas.addEventListener("click", (e) => {
     hasInteracted = true;
+    const hint = document.getElementById("cells-cursor");
+    if (hint) hint.classList.add("is-dismissed");
     if (orgs.filter(o => !o.merged).length >= CFG.maxOrgs) return;
     const { x, y } = getCanvasPos(e);
     spawnOrg(x, y, { targetR: 40 + Math.random() * 24, startR: 8 });
   });
 
-  canvas.addEventListener("touchstart", (e) => {
-    hasInteracted = true;
-    if (orgs.filter(o => !o.merged).length >= CFG.maxOrgs) return;
-    const { x, y } = getCanvasPos(e);
-    spawnOrg(x, y, { targetR: 40 + Math.random() * 24, startR: 8 });
-  }, { passive: true });
-
   // ─── CUSTOM CURSOR (click-to-place hint) ─────────────────────────────────────
   const cursorEl = document.getElementById("cells-cursor");
 
-  if (cursorEl) {
+  // Only where there's a real hover pointer. Touch browsers emit synthetic
+  // mouse events on tap, which would drag the static touch badge around.
+  if (cursorEl && window.matchMedia("(hover: hover)").matches) {
     function showCursor() {
       cursorEl.style.opacity = "1";
     }
