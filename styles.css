@@ -772,8 +772,9 @@ ul {
     padding-inline: var(--margin);
   }
 
+  /* Clears the Go-back pill, which sits in flow at this width */
   .writings__list {
-    padding-top: 200px;
+    padding-top: 104px;
     padding-right: 0;
   }
 
@@ -784,15 +785,399 @@ ul {
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 640px) {
   .writings__entry {
     grid-template-columns: minmax(0, 1fr);
-    row-gap: 10px;
+    row-gap: 2px;
+  }
+
+  .writings__entry + .writings__entry {
+    margin-top: 32px;
   }
 
   .writings__links {
     align-items: flex-start;
+    gap: 0;
     padding-top: 0;
     text-align: left;
+  }
+
+  /* Taller hit area for touch without changing the visual rhythm */
+  .writings__link {
+    padding-block: 10px;
+  }
+}
+
+/* ─── TYPE STATEMENTS ────────────────────────────────────────────────── */
+/*
+  The headline statements ship as outlined SVGs sized for desktop. Scaled to
+  a phone they shrink to caption size, so phones get the same composition as
+  live text: Instrument Serif caps with Rubik 600 for the emphasised words.
+*/
+.statement {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .main-statement__svg,
+  .cv-cta__svg,
+  .site-footer__cta-svg {
+    display: none;
+  }
+
+  .statement {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: clamp(30px, 8.8vw, 40px);
+    font-weight: 400;
+    line-height: 0.96;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+  }
+
+  .statement strong {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    letter-spacing: -0.045em;
+  }
+
+  .statement--cta {
+    font-size: clamp(42px, 12.8vw, 64px);
+    line-height: 0.92;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   Desktop (>1100px) is the design reference and is left untouched.
+     ≤1100px  small laptops / landscape tablets — grids drop a column
+     ≤900px   portrait tablets — two-column layouts stack
+     ≤640px   phones
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* Stop iOS from inflating font sizes in landscape */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* The touch-only hint label stays hidden on pointer devices */
+.cells-cursor__label--touch {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  /* Sticker at 70% so the paper clears the CONTACT link */
+  .site-header__sticker {
+    right: -14px;
+    top: -52px;
+    width: 182px;
+    height: 161px;
+  }
+
+  /* Role takes the empty second column so it doesn't wrap to three lines */
+  .hero-meta__current-role {
+    grid-column: 1 / 3;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 56px;
+  }
+
+  .work-card__header {
+    flex-wrap: wrap;
+  }
+
+  .work-card__category {
+    width: auto;
+  }
+
+  .work-card__image {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .cv-detail__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  /* Anchor jumps land below the sticky header */
+  html {
+    scroll-padding-top: var(--header-height);
+  }
+
+  /* Full-height hit area inside the header, no visual change */
+  .site-header__nav-link {
+    padding-block: 18px;
+  }
+
+  /*
+    Sticker and Go-back pill stop floating: fixed elements on a small screen
+    sit permanently over the content being read. Both now sit at the top of
+    the page and scroll away beneath the sticky header.
+  */
+  .site-header__sticker {
+    position: absolute;
+    z-index: 90;
+    right: 0;
+    top: 40px;
+    width: 156px;
+    height: 138px;
+  }
+
+  .back-to-home {
+    position: absolute;
+    top: calc(var(--header-height) + 20px);
+    left: var(--margin);
+  }
+
+  .hero-meta {
+    padding-block: 120px 48px;
+  }
+
+  .hero-meta__inner {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 40px;
+  }
+
+  .hero-meta__current-role,
+  .hero-meta__clocks {
+    grid-column: auto;
+  }
+
+  .interactive-container {
+    aspect-ratio: 16 / 9;
+  }
+
+  .site-footer__bottom,
+  .site-footer__right {
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --margin: 20px;
+  }
+
+  /* Header — the 6-column grid is too narrow here: logo left, nav right */
+  .site-header__inner {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 16px;
+  }
+
+  .site-header__nav {
+    display: flex;
+    gap: 4px;
+    margin-right: -8px;
+  }
+
+  .site-header__nav-link {
+    padding-inline: 8px;
+  }
+
+  /* Hero meta — role beside the sticker, clocks below */
+  .hero-meta {
+    padding-block: 48px 40px;
+  }
+
+  .hero-meta__inner {
+    row-gap: 36px;
+  }
+
+  /*
+    Clocks keep the desktop's three columns, compacted to time / zone / city.
+    The UTC-offset line repeats the zone abbreviation, so it drops here.
+  */
+  .hero-meta__clocks {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 12px;
+  }
+
+  .hero-timezone__time-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+
+  .hero-timezone__time {
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .hero-timezone > span {
+    display: none;
+  }
+
+  .hero-timezone__location {
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .main-statement {
+    padding-block: 0 32px;
+  }
+
+  /* Interactive canvas */
+  .interactive-section {
+    padding-block: 24px;
+  }
+
+  .interactive-container {
+    aspect-ratio: 4 / 3;
+  }
+
+  #cells-caption {
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  /* Selected work */
+  .selected-work {
+    padding-block: 48px;
+  }
+
+  .section-label {
+    margin-bottom: 24px;
+  }
+
+  .work-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  /* CV */
+  .cv-cta {
+    padding-block: 48px 24px;
+  }
+
+  .cv-detail {
+    padding-block: 8px 48px;
+  }
+
+  .cv-row {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 12px;
+    padding-block: 20px;
+  }
+
+  .cv-row__content {
+    font-size: 13px;
+  }
+
+  /* Other-projects table: each row becomes a stacked entry */
+  .cv-table,
+  .cv-table tbody {
+    display: block;
+  }
+
+  .cv-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .cv-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: 12px;
+    row-gap: 4px;
+    padding-block: 12px;
+    border-top: 1px solid var(--color-black);
+  }
+
+  .cv-table td,
+  .cv-table td:first-child,
+  .cv-table td:nth-child(2) {
+    display: block;
+    width: auto;
+    padding: 0;
+    border-top: 0;
+  }
+
+  .cv-table td:nth-child(2) {
+    text-align: right;
+  }
+
+  .cv-table td:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+
+  /* Footer — stacked, with touch-sized links */
+  .site-footer {
+    padding-block: 48px 32px;
+  }
+
+  .site-footer__cta {
+    margin-bottom: 32px;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-block: 16px;
+  }
+
+  .site-footer__nav,
+  .site-footer__social {
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-left: -8px;
+  }
+
+  .site-footer__nav a,
+  .site-footer__social a {
+    padding: 12px 8px;
+  }
+
+  .site-footer__right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .site-footer__email {
+    padding-block: 12px;
+  }
+
+  .site-footer__copy {
+    margin-top: 8px;
+  }
+}
+
+/*
+  Touch devices: a cursor-following hint has nothing to follow, so it becomes
+  a static badge in the canvas corner and fades out after the first tap.
+*/
+@media (hover: none) {
+  #cells-cursor {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
+
+  #cells-cursor.is-dismissed {
+    opacity: 0;
+  }
+
+  .cells-cursor__quote,
+  .cells-cursor__label--pointer {
+    display: none;
+  }
+
+  .cells-cursor__label--touch {
+    display: inline;
   }
 }

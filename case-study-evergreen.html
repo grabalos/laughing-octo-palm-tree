@@ -6,7 +6,7 @@
   <title>Evergreen — Case Study | Caio Grabalos Galvão</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
     .cs-wrap {
@@ -108,6 +108,101 @@
       .site-header__nav--sections {
         display: none;
       }
+      /* The Go-back pill sits in flow here, so the hero only needs to clear it */
+      .cs-hero-header {
+        padding-block: 104px 64px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .cs-hero-header {
+        padding-block: 96px 48px;
+      }
+      .cs-hero-header__grid {
+        row-gap: 28px;
+      }
+      .cs-wrap {
+        padding-block: 8px 48px;
+      }
+      .cs-img {
+        margin-block: 16px;
+      }
+      .cs-img--pad-top {
+        margin-top: 32px;
+      }
+      .cs-img--pad-bottom {
+        margin-bottom: 32px;
+      }
+    }
+
+    /* ─── Phone image viewer (image-zoom.js) ─── */
+    .zoom-hint {
+      display: none;
+    }
+
+    .zoom-viewer {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: var(--color-white);
+    }
+
+    .zoom-viewer__scroller {
+      position: absolute;
+      inset: 0;
+      overflow: auto;
+      overscroll-behavior: contain;
+    }
+
+    .zoom-viewer__img {
+      display: block;
+      width: 250vw;
+      max-width: none;
+      height: auto;
+    }
+
+    .zoom-viewer__close {
+      position: fixed;
+      top: 12px;
+      right: 12px;
+      z-index: 1;
+      background: var(--color-white);
+      color: var(--color-black);
+      border: 1px solid var(--color-black);
+      border-radius: 100px;
+      padding: 13px 22px;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    html.is-zoom-open {
+      overflow: hidden;
+    }
+
+    @media (max-width: 640px) {
+      /* Same black badge language as the homepage's "tap to interact" hint */
+      .zoom-hint {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        background: var(--color-black);
+        color: var(--color-white);
+        padding: 5px 12px;
+        font-family: var(--font-mono);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .cs-img {
+        cursor: zoom-in;
+      }
     }
   </style>
 </head>
@@ -164,27 +259,29 @@
        ═══════════════════════════════════════════════════════════════════ -->
   <main class="cs-wrap">
 
-    <img id="the-problem" src="assets/evergreen-case-study/02-intro-problem.png" alt="Evergreen reframes life insurance as a living, revisable legacy plan. The Problem: for DLI, the insurer behind Evergreen, the current product fails on two fronts." class="cs-img" />
+    <p class="zoom-hint" aria-hidden="true"><span>+</span> Tap an image to zoom</p>
 
-    <img src="assets/evergreen-case-study/01-hero.png" alt="Your legacy, planned. Evergreen — family flying a kite in a field" class="cs-img" />
+    <img id="the-problem" src="assets/evergreen-case-study/02-intro-problem.png" width="1763" height="762" alt="Evergreen reframes life insurance as a living, revisable legacy plan. The Problem: for DLI, the insurer behind Evergreen, the current product fails on two fronts." class="cs-img" />
 
-    <img id="research" src="assets/evergreen-case-study/03-human-business-cost.png" alt="The human cost and the business cost of an unmanaged inheritance moment, with supporting statistics" class="cs-img cs-img--pad-top" />
+    <img src="assets/evergreen-case-study/01-hero.png" width="2040" height="984" alt="Your legacy, planned. Evergreen — family flying a kite in a field" class="cs-img" />
 
-    <img src="assets/evergreen-case-study/04-journey-ruler-intro.png" alt="User Journey Ruler — the as-is user experience was consolidated in a Journey Ruler based on different service design methods, with footnotes on Frontstage/Backstage Alignment, Carlzon's Moments of Truth, and Composite Personas" class="cs-img cs-img--pad-top" />
+    <img id="research" src="assets/evergreen-case-study/03-human-business-cost.png" width="1702" height="1317" loading="lazy" decoding="async" alt="The human cost and the business cost of an unmanaged inheritance moment, with supporting statistics" class="cs-img cs-img--pad-top" />
 
-    <img src="assets/evergreen-case-study/05-persona-journey.png" alt="The Policyholder Planning Ahead and The Beneficiary Who Didn't Ask For This personas, with an orchestrated/consistent/reactive journey ruler chart" class="cs-img" />
+    <img src="assets/evergreen-case-study/04-journey-ruler-intro.png" width="1603" height="497" loading="lazy" decoding="async" alt="User Journey Ruler — the as-is user experience was consolidated in a Journey Ruler based on different service design methods, with footnotes on Frontstage/Backstage Alignment, Carlzon's Moments of Truth, and Composite Personas" class="cs-img cs-img--pad-top" />
 
-    <img src="assets/evergreen-case-study/07-financial-perspective.png" alt="The financial perspective — a chart showing R$3,000,000 payout value versus R$0 if no claim occurs, and why the product underperforms as a long-term relationship" class="cs-img cs-img--pad-top" />
+    <img src="assets/evergreen-case-study/05-persona-journey.png" width="1663" height="1580" loading="lazy" decoding="async" alt="The Policyholder Planning Ahead and The Beneficiary Who Didn't Ask For This personas, with an orchestrated/consistent/reactive journey ruler chart" class="cs-img" />
 
-    <img id="insights" src="assets/evergreen-case-study/08-insights.png" alt="Insights — research insights translated into jobs to be done, with a journey map and four persona quote cards" class="cs-img cs-img--pad-top" />
+    <img src="assets/evergreen-case-study/07-financial-perspective.png" width="1612" height="980" loading="lazy" decoding="async" alt="The financial perspective — a chart showing R$3,000,000 payout value versus R$0 if no claim occurs, and why the product underperforms as a long-term relationship" class="cs-img cs-img--pad-top" />
 
-    <img id="positioning" src="assets/evergreen-case-study/09-positioning-shift.png" alt="Positioning Shift: From compensation to continuity — a table comparing old insurance language to Evergreen language" class="cs-img cs-img--pad-top" />
+    <img id="insights" src="assets/evergreen-case-study/08-insights.png" width="1775" height="1218" loading="lazy" decoding="async" alt="Insights — research insights translated into jobs to be done, with a journey map and four persona quote cards" class="cs-img cs-img--pad-top" />
 
-    <img src="assets/evergreen-case-study/10-chassis.png" alt="The Chassis — why VGBL/PGBL, not risk-only insurance, with a comparison of premium escalation versus VGBL accumulation" class="cs-img" />
+    <img id="positioning" src="assets/evergreen-case-study/09-positioning-shift.png" width="1946" height="1481" loading="lazy" decoding="async" alt="Positioning Shift: From compensation to continuity — a table comparing old insurance language to Evergreen language" class="cs-img cs-img--pad-top" />
 
-    <img id="solution" src="assets/evergreen-case-study/11-product-features.png" alt="Product Feature: a plan built to be lived in, not just paid into — evergreen by goals and evergreen bridge, with mobile app screens" class="cs-img cs-img--pad-top" />
+    <img src="assets/evergreen-case-study/10-chassis.png" width="1944" height="867" loading="lazy" decoding="async" alt="The Chassis — why VGBL/PGBL, not risk-only insurance, with a comparison of premium escalation versus VGBL accumulation" class="cs-img" />
 
-    <img src="assets/evergreen-case-study/12-what-stayed-open.png" alt="Systems Design and Ethics — what stayed open: dead-hand control versus beneficiary autonomy, where AI could help and where it legally can't, and the incentive model behind the design" class="cs-img cs-img--pad-top cs-img--pad-bottom" />
+    <img id="solution" src="assets/evergreen-case-study/11-product-features.png" width="2056" height="4046" loading="lazy" decoding="async" alt="Product Feature: a plan built to be lived in, not just paid into — evergreen by goals and evergreen bridge, with mobile app screens" class="cs-img cs-img--pad-top" />
+
+    <img src="assets/evergreen-case-study/12-what-stayed-open.png" width="1793" height="674" loading="lazy" decoding="async" alt="Systems Design and Ethics — what stayed open: dead-hand control versus beneficiary autonomy, where AI could help and where it legally can't, and the incentive model behind the design" class="cs-img cs-img--pad-top cs-img--pad-bottom" />
 
   </main>
 
@@ -200,6 +297,8 @@
           width="1360"
           height="200"
         />
+        <!-- Live-text version of the SVG above, shown on phones -->
+        <p class="statement statement--cta">Let's <strong>create</strong> something <strong>meaningful</strong> together</p>
       </div>
 
       <div class="site-footer__bottom">
@@ -223,5 +322,6 @@
     </div>
   </footer>
 
+  <script src="image-zoom.js"></script>
 </body>
 </html>
